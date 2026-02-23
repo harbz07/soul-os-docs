@@ -3,7 +3,8 @@ import MilestoneCard from "@/components/MilestoneCard";
 import ProgressOrb from "@/components/ProgressOrb";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, GitBranch, Brain, Users } from "lucide-react";
+import { Sparkles, GitBranch, Brain, Users, Code2, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const progress = getProgress();
@@ -47,6 +48,16 @@ export default function Home() {
               <span>Currently building: <span className="text-primary font-medium">{currentMilestone.title}</span></span>
             </div>
           )}
+          
+          <div className="flex items-center justify-center gap-4 pt-4">
+            <a href="/api">
+              <Button variant="outline" className="gap-2 border-amber-500/30 hover:bg-amber-500/10 text-amber-200">
+                <Code2 className="w-4 h-4" />
+                API Reference
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
       
