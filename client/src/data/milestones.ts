@@ -18,7 +18,7 @@ export const milestones: Milestone[] = [
     title: "Foundation",
     subtitle: "Model Switching & Identity",
     description: "Give each model a persistent identity and let users switch between them seamlessly within conversations.",
-    status: 'pending',
+    status: 'in-progress',
     features: [
       "Add `model` parameter to chat endpoint",
       "Create agent profiles with personality and expertise",
@@ -187,6 +187,12 @@ export function getCurrentMilestone(): Milestone | undefined {
 }
 
 export function getProgress(): number {
-  const completed = milestones.filter(m => m.status === 'complete').length;
-  return (completed / milestones.length) * 100;
+  // Weighted progress: complete = 1.0, in-progress = 0.5, pending = 0.0
+  const totalWeight = milestones.reduce((sum, m) => {
+    if (m.status === 'complete') return sum + 1.0;
+    if (m.status === 'in-progress') return sum + 0.5;
+    return sum;
+  }, 0);
+  
+  return (totalWeight / milestones.length) * 100;
 }
