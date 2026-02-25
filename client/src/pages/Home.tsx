@@ -3,8 +3,9 @@ import MilestoneCard from "@/components/MilestoneCard";
 import ProgressOrb from "@/components/ProgressOrb";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, GitBranch, Brain, Users, Code2, ArrowRight } from "lucide-react";
+import { Sparkles, GitBranch, Brain, Users, Code2, ArrowRight, Settings2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function Home() {
   const progress = getProgress();
@@ -57,6 +58,13 @@ export default function Home() {
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </a>
+            <Link href="/ops">
+              <Button variant="outline" className="gap-2 border-primary/30 hover:bg-primary/10 text-primary/90">
+                <Settings2 className="w-4 h-4" />
+                Ops
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
