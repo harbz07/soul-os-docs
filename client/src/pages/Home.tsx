@@ -3,8 +3,9 @@ import MilestoneCard from "@/components/MilestoneCard";
 import ProgressOrb from "@/components/ProgressOrb";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, GitBranch, Brain, Users, Code2, ArrowRight } from "lucide-react";
+import { Sparkles, GitBranch, Brain, Users, Code2, ArrowRight, Lock, Settings2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function Home() {
   const progress = getProgress();
@@ -12,6 +13,14 @@ export default function Home() {
   
   return (
     <div className="min-h-screen">
+      {/* Access / Visibility Notice */}
+      <div className="sticky top-0 z-50 flex items-center justify-center gap-2 bg-amber-950/90 backdrop-blur-sm border-b border-amber-500/40 px-4 py-2 text-sm text-amber-200">
+        <Lock className="w-4 h-4 shrink-0 text-amber-400" />
+        <span>
+          <strong>Internal use only.</strong> This documentation site is not intended to be public-facing. Do not share this URL externally.
+        </span>
+      </div>
+
       {/* Hero Section with Cosmic Background */}
       <section 
         className="relative min-h-[60vh] flex items-center justify-center overflow-hidden"
@@ -50,13 +59,20 @@ export default function Home() {
           )}
           
           <div className="flex items-center justify-center gap-4 pt-4">
-            <a href="/api">
+            <Link href="/api">
               <Button variant="outline" className="gap-2 border-amber-500/30 hover:bg-amber-500/10 text-amber-200">
                 <Code2 className="w-4 h-4" />
                 API Reference
                 <ArrowRight className="w-4 h-4" />
               </Button>
-            </a>
+            </Link>
+            <Link href="/ops">
+              <Button variant="outline" className="gap-2 border-primary/30 hover:bg-primary/10 text-primary">
+                <Settings2 className="w-4 h-4" />
+                Ops
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
