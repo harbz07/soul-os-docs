@@ -9,6 +9,8 @@ import Home from "./pages/Home";
 import ApiDocs from "./pages/ApiDocs";
 import Ops from "./pages/Ops";
 import OpsDailyDigest from "./pages/OpsDailyDigest";
+import OpsSops from "./pages/OpsSops";
+import OpsSopDetail from "./pages/OpsSopDetail";
 
 
 function Router() {
@@ -17,6 +19,8 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/api"} component={ApiDocs} />
       <Route path={"/ops"} component={Ops} />
+      <Route path={"/ops/sops"} component={OpsSops} />
+      <Route path={"/ops/sops/:slug"} component={OpsSopDetail} />
       <Route path={"/ops/daily-digest"} component={OpsDailyDigest} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

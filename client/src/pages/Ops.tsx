@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Settings2, ClipboardList, ArrowRight } from "lucide-react";
+import { Settings2, ClipboardList, BookOpen, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Ops() {
@@ -40,6 +40,28 @@ export default function Ops() {
                 </div>
               </div>
               <Link href="/ops/daily-digest">
+                <Button variant="outline" className="gap-2 border-primary/30 hover:bg-primary/10 text-primary/90 shrink-0">
+                  View
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
+          </Card>
+
+          <Card className="p-6 bg-card/60 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all">
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex items-start gap-4">
+                <div className="p-2 rounded-lg bg-primary/10 mt-1">
+                  <BookOpen className="w-5 h-5 text-primary" />
+                </div>
+                <div className="space-y-1">
+                  <h2 className="text-xl font-display text-foreground">Standard Operating Procedures</h2>
+                  <p className="text-sm text-foreground/70">
+                    Browse and follow SOPs sourced from the YAML registry, covering deployments, incidents, and engineering practices.
+                  </p>
+                </div>
+              </div>
+              <Link href="/ops/sops">
                 <Button variant="outline" className="gap-2 border-primary/30 hover:bg-primary/10 text-primary/90 shrink-0">
                   View
                   <ArrowRight className="w-4 h-4" />
