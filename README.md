@@ -2,9 +2,16 @@
 
 Documentation site for Soul OS, built with Vite + React on the frontend and a small Express server for production hosting.
 
+The published docs at [docs.soul-os.cc](https://docs.soul-os.cc) currently cover:
+
+- **Soul-OS overview**: multi-agent cognitive ecosystem vision, shared memory model, and milestone progress
+- **Current architecture**: frontend/worker, MindBridge API, D1 data stores, and cognitive pipeline stages
+- **API reference**: chat, memory, agent, and system endpoints, with authentication and integration examples
+- **Ops**: internal operational tooling such as the Daily Agent Digest
+
 ## Prerequisites
 
-- Node.js 20+
+- Node.js ^20.19.0 or >=22.12.0
 - pnpm 10.4.1 (via Corepack)
 
 ## Getting Started
