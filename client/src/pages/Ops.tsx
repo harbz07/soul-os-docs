@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Settings2, ClipboardList, ArrowRight } from "lucide-react";
+import { Settings2, ClipboardList, FileText, Bot, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Ops() {
@@ -40,6 +40,51 @@ export default function Ops() {
                 </div>
               </div>
               <Link href="/ops/daily-digest">
+                <Button variant="outline" className="gap-2 border-primary/30 hover:bg-primary/10 text-primary/90 shrink-0">
+                  View
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
+          </Card>
+
+          <Card className="p-6 bg-card/60 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all">
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex items-start gap-4">
+                <div className="p-2 rounded-lg bg-primary/10 mt-1">
+                  <FileText className="w-5 h-5 text-primary" />
+                </div>
+                <div className="space-y-1">
+                  <h2 className="text-xl font-display text-foreground">Standard Operating Procedures</h2>
+                  <p className="text-sm text-foreground/70">
+                    Registry-driven SOPs for incident response, deployments, agent onboarding, and more.
+                  </p>
+                </div>
+              </div>
+              <Link href="/ops/sops">
+                <Button variant="outline" className="gap-2 border-primary/30 hover:bg-primary/10 text-primary/90 shrink-0">
+                  View
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
+          </Card>
+
+          <Card className="p-6 bg-card/60 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all">
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex items-start gap-4">
+                <div className="p-2 rounded-lg bg-primary/10 mt-1">
+                  <Bot className="w-5 h-5 text-primary" />
+                </div>
+                <div className="space-y-1">
+                  <h2 className="text-xl font-display text-foreground">Maintenance Agents</h2>
+                  <p className="text-sm text-foreground/70">
+                    Lifecycle docs for Steward, Auditor, Builder, and Runner — the knowledge-hub
+                    maintenance agent quartet.
+                  </p>
+                </div>
+              </div>
+              <Link href="/ops/maintenance-agents">
                 <Button variant="outline" className="gap-2 border-primary/30 hover:bg-primary/10 text-primary/90 shrink-0">
                   View
                   <ArrowRight className="w-4 h-4" />
