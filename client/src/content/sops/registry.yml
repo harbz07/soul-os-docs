@@ -1,0 +1,49 @@
+sops:
+  - slug: soulspace-deploy
+    title: SoulSpace Deploy
+    summary: Standard process for deploying the SoulSpace application to production.
+    category: deployment
+    status: active
+    repo: harbz07/SoulSpace
+    steps:
+      - Ensure all tests pass on the main branch.
+      - Run `pnpm build` locally and verify the build output.
+      - Open a pull request targeting `main` and request a review.
+      - After approval, merge and confirm the CI/CD pipeline completes successfully.
+      - Verify the deployment by checking the live environment URL.
+    notes:
+      - Never deploy directly to production without a passing CI run.
+      - Tag releases using semantic versioning (e.g. v1.2.3).
+
+  - slug: incident-response
+    title: Incident Response
+    summary: Steps to follow when a production incident is detected in any watched repo.
+    category: operations
+    status: active
+    repo: harbz07/SoulSpace
+    steps:
+      - Identify the incident and record a brief description in the ops channel.
+      - Assess severity (P1 critical / P2 high / P3 medium / P4 low).
+      - For P1/P2, page the on-call engineer immediately.
+      - Isolate the affected service if possible to limit blast radius.
+      - Apply a fix or rollback and confirm recovery.
+      - Write a post-mortem within 48 hours and link it to the incident issue.
+    notes:
+      - All incident tracking issues live in the mcp-knowledge-hub repo.
+      - Keep communication in the designated ops channel during the incident.
+
+  - slug: code-review
+    title: Code Review
+    summary: Conventions for reviewing pull requests across all Soul OS repositories.
+    category: engineering
+    status: active
+    repo: harbz07/SoulSpace
+    steps:
+      - Assign at least one reviewer before merging any PR.
+      - Check that the PR description explains the "why", not just the "what".
+      - Run the project locally or verify CI passes before approving.
+      - Leave inline comments for specific line feedback; use top-level comments for general notes.
+      - Approve only when all blocking comments have been resolved.
+    notes:
+      - Prefer requesting changes over leaving unresolved nitpick comments.
+      - Use conventional commit message format for merge commits.
